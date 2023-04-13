@@ -14,7 +14,7 @@ Details
 * [Oh My Zsh](https://ohmyz.sh/) , 
 * [Powerlevel10k](https://github.com/romkatv/powerlevel10k)theme, 
 * [Navi](https://github.com/denisidoro/navi) cheatsheets, 
-* [Fzf] (https://github.com/junegunn/fzf) 
+* [Fzf](https://github.com/junegunn/fzf) 
 and More! 
 
 
