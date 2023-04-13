@@ -107,7 +107,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias explorer="explorer.exe"
-alias bat="batcat"
+
 
 export PATH="${PATH}:${HOME}/.cargo/bin"
 eval "$(navi widget zsh)"
