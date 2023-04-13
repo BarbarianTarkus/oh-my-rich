@@ -62,13 +62,15 @@ install_navi() {
 check_and_copy(){
     # Check if file is more recent than backup
     
-    if ! cmp -s "$1" "$2" && [ "$1" -nt "$2" ]; then
+    if ! cmp -s "$1" "$2" || [ "$1" -nt "$2" ]; then
         echo "  ❌Backing up current $1"
         cp -p "$1" "$2" 
     else 
         echo "  ✅ Current $1 is already updated"
     fi
 }
+
+
 
 copy_config_files(){
 
