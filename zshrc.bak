@@ -110,6 +110,8 @@ alias explorer="explorer.exe"
 alias cat="bat"
 
 export PATH="${PATH}:${HOME}/.cargo/bin"
+export PATH="${PATH}:${HOME}/.local/bin"
+
 eval "$(navi widget zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
