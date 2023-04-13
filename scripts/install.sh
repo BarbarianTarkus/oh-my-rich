@@ -38,7 +38,7 @@ install_powerlevel10k(){
 }
 
 
-install_antigen (){
+install_antigen(){
     # Check if antigen is installed
     if antigen &> /dev/null; then
         echo "antigen is not installed. Installing..."
@@ -46,6 +46,7 @@ install_antigen (){
     else
         echo "✅ antigen is already installed."
     fi
+    source ~/antigen.zsh
 }
 
 install_navi() {
