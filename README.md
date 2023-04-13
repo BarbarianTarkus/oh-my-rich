@@ -9,7 +9,6 @@
 
 Details
 --
-⚠️ Only Tested on Debian(also only using APT for some installs)
 
 🚀🔧 A Bash script that automates the installation of essential command-line tools and enhances the shell experience with 🛠️💻
 * [Oh My Zsh](https://ohmyz.sh/) , 
@@ -21,6 +20,7 @@ and More!
 
 ## Installation
 
+⚠️ Only Tested on Debian(also only using APT for some installs)
 
 ```
 
