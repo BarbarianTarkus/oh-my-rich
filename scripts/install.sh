@@ -58,6 +58,17 @@ install_navi() {
     fi
 }
 
+
+check_and_copy(){
+    # Check if file is more recent than backup
+    if [ cmp -s "$1" "$1" && $1 -nt $2 ]; then
+        echo "  ❌Backing up current $1"
+        cp -p $1 $2 
+    else 
+        echo "  ✅ Current $1 is already updated"
+    fi
+}
+
 copy_config_files(){
 
     config_location=configuration
@@ -68,23 +79,11 @@ copy_config_files(){
 
     # Update zsh config
     echo "⌛ Loading shell config .zshrc"
-
-    #check if ~/.zshrc is more recent than zshrc.bak
-    if [ $zshrc_file -nt ~/.zshrc ]; then
-        echo "  ❌Backing up current .zshrc"
-        cp -p $zshrc_file ~/.zshrc 
-    else 
-        echo "  ✅ Current .zshrc is already updated"
-    fi
+    check_and_copy $zshrc_file ~/.zshrc 
 
     # Update theme config
     echo "⌛ Loading theme .p10k.zsh" 
-    if [ $p10k_file -nt ~/.p10k.zsh ]; then
-        echo "  ❌Backing up current .p10k.zsh"
-        cp -p $p10k_file ~/.p10k.zsh
-    else 
-        echo "  ✅ Current .p10k.zsh is already updated"
-    fi
+    check_and_copy $p10k_file ~/.p10k.zsh 
 }
 
 ## Main

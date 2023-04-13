@@ -25,4 +25,9 @@ if [ ~/.p10k.zsh -nt $p10k_file  ]; then
 else 
     echo "  ✅ Current .p10k.zsh.bak is already updated"
 fi
+
+# backup /home/gouda/.oh-my-zsh/plugins folder 
+
+
+
 echo
