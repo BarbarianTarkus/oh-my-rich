@@ -123,7 +123,7 @@ eval "$(navi widget zsh)"
 
 ## ANTIGEN
 # Load Antigen
-[ -f ~/.antigen.zsh ] && source ~/.antigen.zsh
+[ -f ~/antigen.zsh ] && source ~/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundle zsh-users/zsh-autosuggestions

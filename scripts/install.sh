@@ -40,7 +40,7 @@ install_powerlevel10k(){
 
 install_antigen(){
     # Check if antigen is installed
-    if antigen &> /dev/null; then
+    if ! command antigen &> /dev/null; then
         echo "antigen is not installed. Installing..."
         curl -L git.io/antigen > ~/antigen.zsh
     else
