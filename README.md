@@ -23,7 +23,6 @@ and More!
 ⚠️ Only Tested on Debian(also only using APT for some installs)
 
 ```
-
 git clone https://github.com/BarbarianTarkus/oh-my-rich
 
 cd oh-my-rich && ./install.sh
