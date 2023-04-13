@@ -27,4 +27,6 @@ git clone https://github.com/BarbarianTarkus/oh-my-rich
 
 cd oh-my-rich && ./install.sh
 ```
+
+## Preview
 <img src="https://github.com/BarbarianTarkus/oh-my-rich/raw/main/prompt.png" width=1080>
