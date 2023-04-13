@@ -58,6 +58,9 @@ install_check_apt fzf
 install_check_apt bat
 
 
+
+#TODO copy with original timestamp
+
 # Update zsh config
 echo "⌛ Loading shell config .zshrc"
 
@@ -75,7 +78,7 @@ if [ p10k.zsh.bak -nt ~/.p10k.zsh ]; then
     echo "  ❌Backing up current .p10k.zsh"
     cp p10k.zsh.bak ~/.p10k.zsh
 else 
-    echo "  ✅ Current .zshrc is already updated"
+    echo "  ✅ Current .p10k.zsh is already updated"
 fi
 
 # Reload zsh config
