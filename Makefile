@@ -9,3 +9,7 @@ push:
 		git commit -m "$$MESSAGE"; \
 		git push; \
 	fi
+install:
+	./scripts/install.sh
+backup:
+	./scripts/backup.sh 
