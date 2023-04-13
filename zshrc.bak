@@ -116,5 +116,17 @@ eval "$(navi widget zsh)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/.antigen.zsh ] && source ~/.antigen.zsh
 
+
+## ANTIGEN
+# Load Antigen
+[ -f ~/.antigen.zsh ] && source ~/.antigen.zsh
+antigen use oh-my-zsh
+
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle srijanshetty/zsh-pip-completion
+
+# Apply changes
+antigen apply
