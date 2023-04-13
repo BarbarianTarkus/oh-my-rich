@@ -50,10 +50,12 @@ else
 fi
 
 # Restaurar zsh config
+echo "Loading shell config .zshrc"
 cp ~/.zshrc ~/.zshrc.bak
 cp zshrc ~/.zshrc
 
 # Restaurar theme config
+echo "Loading theme .p10k.zsh" 
 cp ~/.p10k.zsh ~/.p10k.zsh.bak
 cp p10k.zsh ~/.p10k.zsh
 
@@ -72,9 +74,9 @@ EOF
 # Recargar la configuración de zsh
 source ~/.zshrc
 
-sudo apt -y install bat 
+sudo apt -y install bat
 
 
 echo "Para navegar por los repositorios de Cheatshet de navi, ejecute el comando:"
-echo 
+echo
 echo "navi repo browse"
