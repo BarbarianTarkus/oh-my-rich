@@ -1,60 +1,60 @@
-#!/bin/bash
+##!/bin/bash
 
-# Verificar si zsh está instalado
+# Check if zsh is installed
 if ! command -v zsh &> /dev/null; then
-    echo "zsh no está instalado. Instalando..."
+    echo "zsh is not installed. Installing..."
     sudo apt install -y zsh
 else
-    echo "zsh ya está instalado."
+    echo "zsh is already installed."
 fi
 
-# Verificar si oh-my-zsh está instalado
+# Check if oh-my-zsh is installed
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    echo "oh-my-zsh no está instalado. Instalando..."
+    echo "oh-my-zsh is not installed. Installing..."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
-    echo "oh-my-zsh ya está instalado."
+    echo "oh-my-zsh is already installed."
 fi
 
-# Verificar si powerlevel10k está instalado
+# Check if powerlevel10k is installed
 if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
-    echo "powerlevel10k no está instalado. Instalando..."
+    echo "powerlevel10k is not installed. Installing..."
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 else
-    echo "powerlevel10k ya está instalado."
+    echo "powerlevel10k is already installed."
 fi
 
-# Verificar si antigen está instalado
+# Check if antigen is installed
 if ! command -v antigen &> /dev/null; then
-    echo "antigen no está instalado. Instalando..."
+    echo "antigen is not installed. Installing..."
     curl -L git.io/antigen > ~/.antigen.zsh
 else
-    echo "antigen ya está instalado."
+    echo "antigen is already installed."
 fi
 
-# Verificar si navi está instalado
+# Check if navi is installed
 if ! command -v navi &> /dev/null; then
-    echo "navi no está instalado. Instalando..."
+    echo "navi is not installed. Installing..."
     bash <(curl -sL https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)
 else
-    echo "navi ya está instalado."
+    echo "navi is already installed."
 fi
 
-# Verificar si fzf está instalado
+# Check if fzf is installed
 if ! command -v fzf &> /dev/null; then
-    echo "fzf no está instalado. Instalando..."
+    echo "fzf is not installed. Installing..."
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     ~/.fzf/install --all
 else
-    echo "fzf ya está instalado."
+    echo "fzf is already installed."
 fi
 
-# Restaurar zsh config
+# Restore zsh config
 echo "Loading shell config .zshrc"
 cp ~/.zshrc ~/.zshrc.bak
 cp zshrc ~/.zshrc
 
-# Restaurar theme config
+# Restore theme config
 echo "Loading theme .p10k.zsh" 
 cp ~/.p10k.zsh ~/.p10k.zsh.bak
 cp p10k.zsh ~/.p10k.zsh
@@ -71,12 +71,11 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen apply
 EOF
 
-# Recargar la configuración de zsh
+# Reload zsh config
 source ~/.zshrc
 
 sudo apt -y install bat
 
-
-echo "Para navegar por los repositorios de Cheatshet de navi, ejecute el comando:"
+echo "To browse the Cheatshet repositories of navi, run the command:"
 echo
 echo "navi repo browse"
