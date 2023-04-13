@@ -12,10 +12,12 @@ Details
 
 🚀🔧 A Bash script that automates the installation of essential command-line tools and enhances the shell experience with 🛠️💻
 * [Oh My Zsh](https://ohmyz.sh/) , 
-* [Powerlevel10k](https://github.com/romkatv/powerlevel10k)theme, 
+* [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme, 
 * [Navi](https://github.com/denisidoro/navi) cheatsheets, 
 * [Fzf](https://github.com/junegunn/fzf) 
 and More! 
+
+
 
 
 ## Installation
@@ -25,7 +27,7 @@ and More!
 ```
 git clone https://github.com/BarbarianTarkus/oh-my-rich
 
-cd oh-my-rich && ./install.sh
+cd oh-my-rich && make install
 ```
 
 ## Preview

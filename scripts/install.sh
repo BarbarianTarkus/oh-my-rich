@@ -79,7 +79,7 @@ copy_config_files(){
 
     # Update theme config
     echo "⌛ Loading theme .p10k.zsh" 
-    if [ p10k_file -nt ~/.p10k.zsh ]; then
+    if [ $p10k_file -nt ~/.p10k.zsh ]; then
         echo "  ❌Backing up current .p10k.zsh"
         cp -p $p10k_file ~/.p10k.zsh
     else 
