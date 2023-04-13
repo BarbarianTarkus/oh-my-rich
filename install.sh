@@ -72,6 +72,9 @@ EOF
 # Recargar la configuración de zsh
 source ~/.zshrc
 
+sudo apt -y install bat 
+
+
 echo "Para navegar por los repositorios de Cheatshet de navi, ejecute el comando:"
 echo 
 echo "navi repo browse"
