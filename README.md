@@ -22,7 +22,13 @@ and More!
 
 ## Installation
 
-⚠️ Only Tested on Debian(also only using APT for some installs)
+Requirements: 
+* apt
+* wget
+* curl
+* tar
+
+⚠️ Only Tested on Debian
 
 ```
 git clone https://github.com/BarbarianTarkus/oh-my-rich
