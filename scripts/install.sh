@@ -3,7 +3,11 @@
 install_apt() {
     if ! command -v "$1" &>/dev/null; then
         echo "$1 is not installed. Installing..."
-        sudo apt install -y "$1"
+        if ! sudo apt install -y "$1"; then
+            echo "✅ $1 installed successfully."
+        else
+            echo "❌ $1 installation failed. You can try to install it manually or if you are not on Debian, use your package manager."
+        fi
     else
         echo "✅ $1 is already installed."
     fi
@@ -50,21 +54,19 @@ install_navi() {
 }
 
 check_and_copy() {
-    # Check if file is more recent than backup
+    # This function checks if a file is more recent than its backup and copies it if necessary
+    check_and_copy() {
+               cp -p "$1" "$2"
+               echo "  ✅ Current $1 is already updated"
+    }
 
-    if ! cmp -s "$1" "$2" || [ "$1" -nt "$2" ]; then
-        echo "  ❌Backing up current $1"
-        cp -p "$1" "$2"
-    else
-        echo "  ✅ Current $1 is already updated"
-    fi
 }
 
 copy_config_files() {
 
-    config_location=configuration
-    zshrc_file=$config_location/zshrc.bak
-    p10k_file=$config_location/p10k.zsh.bak
+
+    zshrc_file=./configuration/zshrc.bak
+    p10k_file=./configuration/p10k.zsh.bak
 
     #TODO copy with original timestamp
 
