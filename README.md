@@ -10,7 +10,7 @@
 Details
 --
 
-🚀🔧 A Bash script that automates the installation of essential command-line tools and enhances the shell experience with 🛠️💻
+🚀🔧 A Bash script that automates the installation of essential command-line tools and enhancement of the shell experience with 🛠️💻
 * [Oh My Zsh](https://ohmyz.sh/) , 
 * [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme, 
 * [Navi](https://github.com/denisidoro/navi) cheatsheets, 
