@@ -54,26 +54,18 @@ install_navi() {
 }
 
 check_and_copy() {
-    # This function checks if a file is more recent than its backup and copies it if necessary
-    check_and_copy() {
-               cp -p "$1" "$2"
-               echo "  ✅ Current $1 is already updated"
-    }
-
+    cp -a "$1" "$2" # -p: Preserve all: metadata & attributes
+    echo "✅ Current $1 is already updated"   
 }
 
 copy_config_files() {
-
-
     zshrc_file=./configuration/zshrc.bak
     p10k_file=./configuration/p10k.zsh.bak
-
-    #TODO copy with original timestamp
 
     # Update zsh config
     echo "⌛ Loading shell config .zshrc"
     check_and_copy $zshrc_file ~/.zshrc
-
+    
     # Update theme config
     echo "⌛ Loading theme .p10k.zsh"
     check_and_copy $p10k_file ~/.p10k.zsh
