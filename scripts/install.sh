@@ -41,7 +41,7 @@ install_antigen() {
     # Check if antigen is installed
     if ! command antigen &>/dev/null; then
         echo "antigen is not installed. Installing..."
-        curl -L git.io/antigen >~/antigen.zsh
+        curl -L git.io/antigen > ~/antigen.zsh
     else
         echo "✅ antigen is already installed."
     fi
