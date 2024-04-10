@@ -7,6 +7,7 @@ install_apt() {
             echo "✅ $1 installed successfully."
         else
             echo "❌ $1 installation failed. You can try to install it manually or if you are not on Debian, use your package manager."
+	    exit 0
         fi
     else
         echo "✅ $1 is already installed."
@@ -17,7 +18,10 @@ install_oh_my_zsh() {
     # Check if oh-my-zsh is installed
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
         echo "oh-my-zsh is not installed. Installing..."
+	# Installing P10k
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	# Setting up p10k theme
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     else
         echo "✅ oh-my-zsh is already installed."
     fi
@@ -27,7 +31,7 @@ install_powerlevel10k() {
     # Check if powerlevel10k is installed
     if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
         echo "powerlevel10k is not installed. Installing..."
-        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/themes/powerlevel10k
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
     else
         echo "✅ powerlevel10k is already installed."
     fi
