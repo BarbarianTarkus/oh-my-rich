@@ -12,4 +12,11 @@ push:
 install:
 	./scripts/install.sh
 backup:
-	./scripts/backup.sh 
+	./scripts/backup.sh
+help:
+	@echo "Usage: make [target]"
+	@echo "Targets:"
+	@echo "  push     - Adds all changes, commits them with a message, and pushes to the remote repository."
+	@echo "  install  - Runs the installation script."
+	@echo "  backup   - Runs the backup script."
+	@echo "  help     - Displays this help message."
