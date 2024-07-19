@@ -17,15 +17,14 @@ if [ -f ~/.zshrc ]; then
         read -p "    Do you want to back up ~/.zshrc? (y/n) " -n 1 -r
         echo
         if [[ $REPLY =~ ^[Yy]$ ]]; then
-            echo "  ❌ Backing up current ~/.zshrc"
-            cp -a ~/.zshrc $zshrc_file
-            if [ $? -eq 0 ]; then
+            echo "  ⌛ Backing up current ~/.zshrc"
+            if cp -a ~/.zshrc "$zshrc_file"; then
                 echo "  ✅ Backup of ~/.zshrc successful"
             else
                 echo "  ❌ Error: Backup of ~/.zshrc failed"
             fi
         else
-            echo "  ✅ Skipping backup of ~/.zshrc"
+            echo "  ⏩ Skipping backup of ~/.zshrc"
         fi
     else
         echo "  ✅ Current .zshrc.bak is already backed up"
@@ -43,15 +42,14 @@ if [ -f ~/.p10k.zsh ]; then
         read -p "    Do you want to back up ~/.p10k.zsh? (y/n) " -n 1 -r
         echo
         if [[ $REPLY =~ ^[Yy]$ ]]; then
-            echo "  ❌ Backing up current ~/.p10k.zsh"
-            cp -a ~/.p10k.zsh $p10k_file
-            if [ $? -eq 0 ]; then
+            echo "  ⌛ Backing up current ~/.p10k.zsh"
+            if cp -a ~/.p10k.zsh "$p10k_file"; then
                 echo "  ✅ Backup of ~/.p10k.zsh successful"
             else
                 echo "  ❌ Error: Backup of ~/.p10k.zsh failed"
             fi
         else
-            echo "  ✅ Skipping backup of ~/.p10k.zsh"
+            echo "  ⏩ Skipping backup of ~/.p10k.zsh"
         fi
     else
         echo "  ✅ Current .p10k.zsh.bak is already backed up"

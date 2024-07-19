@@ -68,7 +68,7 @@ install_zinit() {
 install_navi() {
     # Check if navi is installed
     if ! type navi &>/dev/null; then
-        echo "navi is not installed. Installing..."
+        echo "⌛navi is not installed. Installing..."
         bash <(curl -sL https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)
     else
         echo "✅ navi is already installed."
@@ -123,7 +123,7 @@ case $response in
         install_apt bat
         ;;
     *)
-        echo "Skipping bat installation."
+        echo "⏩Skipping bat installation."
         # Remove alias from zshrc.bak: "alias badcat="cat"         
         sed -i '/alias badcat/d' $zshrc_file
         ;;
