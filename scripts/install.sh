@@ -49,7 +49,10 @@ install_powerlevel10k() {
     # Check if powerlevel10k is installed
     if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
         echo "⌛powerlevel10k is not installed. Installing..."
+        # Install p10k
         git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME"/powerlevel10k
+        # Install p10k theme on OMZ
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/themes/powerlevel10k
     else
         echo "✅ powerlevel10k is already installed."
     fi
@@ -116,7 +119,7 @@ install_navi
 install_fzf
 
 
-echo "Do you want to install bat(only if you have apt)? [y/n]"
+echo "Do you want to install bat(only if you have APT)? [y/n]"
 read -r response
 case $response in
     [Yy]*)
@@ -124,11 +127,23 @@ case $response in
         ;;
     *)
         echo "⏩Skipping bat installation."
-        # Remove alias from zshrc.bak: "alias badcat="cat"         
+        # Remove alias from zshrc.bak: "alias badcat="cat"
         sed -i '/alias badcat/d' $zshrc_file
         ;;
 esac
 
+echo "Do you want to install lsd(only if you have APT)? [y/n]"
+read -r response
+case $response in
+    [Yy]*)
+        install_apt lsd
+        ;;
+    *)
+        echo "⏩Skipping lsd installation."
+        # Remove alias from zshrc.bak
+        sed -i '/alias lsd/d' $zshrc_file
+        ;;
+esac
 
 # reload zsh
 zsh
