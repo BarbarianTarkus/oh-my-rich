@@ -148,7 +148,7 @@ install_navi
 
 install_fzf
 
-additional_packages=("bat" "zoxide")
+additional_packages=("lsd" "bat" "zoxide")
 for package in "${additional_packages[@]}"; do
     install_additional_package "$package"
 done
